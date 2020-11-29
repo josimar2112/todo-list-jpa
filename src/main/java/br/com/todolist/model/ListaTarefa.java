@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@Entity
+@Entity(name = "lista_tarefa")
 public class ListaTarefa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
