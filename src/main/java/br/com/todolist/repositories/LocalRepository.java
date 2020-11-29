@@ -6,17 +6,18 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-import br.com.todolist.model.ListaTarefa;
 
-public class ListaTarefaRepository implements Serializable {
+import br.com.todolist.model.Local;
+
+public class LocalRepository implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Inject
 	private EntityManager entityManager;
 
-	public List<ListaTarefa> listarTudo() {
-		return entityManager.createQuery("from lista_tarefa", ListaTarefa.class).getResultList();
+	public List<Local> listarTudo() {
+		return entityManager.createQuery("from Local", Local.class).getResultList();
 
 	}
 
