@@ -8,7 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Usuario implements Serializable {
+public class Local implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,12 +18,13 @@ public class Usuario implements Serializable {
 
 	private String nome;
 
-	public Usuario(long id, String nome) {
+	public Local(long id, String nome) {
+		super();
 		this.id = id;
 		this.nome = nome;
 	}
 
-	public Usuario() {
+	public Local() {
 	}
 
 	public long getId() {
@@ -42,6 +43,10 @@ public class Usuario implements Serializable {
 		this.nome = nome;
 	}
 
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -58,7 +63,7 @@ public class Usuario implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Usuario other = (Usuario) obj;
+		Local other = (Local) obj;
 		if (id != other.id)
 			return false;
 		return true;
