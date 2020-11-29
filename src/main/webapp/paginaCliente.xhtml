@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta charset="UTF-8"/>
+</h:head>
+<h:body>
+
+    <h:form>
+
+        <p:panel header="Cadastro de Loja">
+            <h:panelGrid columns="2">
+                <p:outputLabel value="loja" />
+				<p:inputText value="#{testeBean2.novoTeste.loja}" />
+
+                <p:outputLabel value="telefone" />
+                <p:inputMask mask="99.9999.9999"  />
+
+                <p:outputLabel/>
+                <p:commandButton value="Salvar" action="#{testeBean2.salvarRegistro}"/>
+            </h:panelGrid>
+        </p:panel>
+
+    </h:form>
+
+</h:body>
+</html>
