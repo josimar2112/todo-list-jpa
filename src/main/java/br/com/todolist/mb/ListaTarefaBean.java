@@ -3,7 +3,7 @@ package br.com.todolist.mb;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -17,17 +17,15 @@ public class ListaTarefaBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private ListaTarefaRepository repository;
+    private ListaTarefaRepository repository;
 
-	private List<ListaTarefa> listaTarefas;
+    private List<ListaTarefa> listaTarefas;
 
-	public void Consultar() {
-		listaTarefas = repository.listarTudo();
+    public void Consultar() {
+        listaTarefas = repository.listarTudo();
+    }
 
-	}
-
-	public List<ListaTarefa> getListaTarefas() {
-		return listaTarefas;
-	}
-
+    public List<ListaTarefa> getListaTarefas() {
+        return listaTarefas;
+    }
 }
