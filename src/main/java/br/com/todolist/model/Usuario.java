@@ -2,10 +2,12 @@ package br.com.todolist.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario implements Serializable {
@@ -17,6 +19,10 @@ public class Usuario implements Serializable {
 	private long id;
 
 	private String nome;
+	
+
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+	private List<ListTarefa> listaTarefas;
 
 	public Usuario(long id, String nome) {
 		this.id = id;
@@ -24,6 +30,14 @@ public class Usuario implements Serializable {
 	}
 
 	public Usuario() {
+	}
+
+	public List<ListTarefa> getListaTarefas() {
+		return listaTarefas;
+	}
+
+	public void setListaTarefas(List<ListTarefa> listaTarefas) {
+		this.listaTarefas = listaTarefas;
 	}
 
 	public long getId() {

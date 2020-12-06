@@ -42,7 +42,10 @@ public class ListaTarefa implements Serializable {
 	@Enumerated(EnumType.ORDINAL)
 	@Column(name = "status_tarefa")
 	private StatusTarefa statusTarefa;
-
+	
+	
+	
+	
 	public ListaTarefa() {
 	}
 
