@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
@@ -37,7 +39,12 @@ public class ListaTarefa implements Serializable {
 	@Column(name = "observacao", length = 120)
 	private String observacao;
 
-	public ListaTarefa() {}
+	@Enumerated(EnumType.ORDINAL)
+	@Column(name = "status_tarefa")
+	private StatusTarefa statusTarefa;
+
+	public ListaTarefa() {
+	}
 
 	public ListaTarefa(Long id, String descricao, Date dataCadastro, Date dataExecucao, Date dataConclusao,
 			String observacao) {
@@ -95,6 +102,14 @@ public class ListaTarefa implements Serializable {
 
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
+	}
+
+	public StatusTarefa getStatusTarefa() {
+		return statusTarefa;
+	}
+
+	public void setStatusTarefa(StatusTarefa statusTarefa) {
+		this.statusTarefa = statusTarefa;
 	}
 
 	@Override
