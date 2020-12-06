@@ -22,7 +22,7 @@ public class ListaTarefaRepository implements Serializable {
 	}
 	
 	@Transacional
-	public ListaTarefa salva(ListaTarefa novaTarefa) {
+	public ListaTarefa salvar(ListaTarefa novaTarefa) {
 		return entityManager.merge(novaTarefa);
 		
 		
